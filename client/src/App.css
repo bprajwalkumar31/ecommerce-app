@@ -47,3 +47,10 @@
   text-align: center;
   margin-top: 40px;
 }
+.search {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  box-sizing: border-box;
+}

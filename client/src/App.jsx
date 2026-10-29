@@ -6,6 +6,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     axios
@@ -23,11 +24,22 @@ function App() {
   if (loading) return <p className="message">Loading products...</p>;
   if (error) return <p className="message">{error}</p>;
 
+  const filtered = products.filter((p) =>
+    p.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div className="container">
       <h1>My Shop</h1>
+      <input
+        className="search"
+        type="text"
+        placeholder="Search products..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
       <div className="grid">
-        {products.map((p) => (
+        {filtered.map((p) => (
           <div className="card" key={p._id}>
             <img src={p.image} alt={p.name} />
             <h3>{p.name}</h3>
