@@ -1,5 +1,7 @@
 # E-commerce App
 
+![Shop page](shop.png)
+
 A full-stack e-commerce web app built with React, Node.js, Express and MongoDB.
 
 ## Status
