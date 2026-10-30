@@ -13,6 +13,19 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Get one product by id
+router.get("/:id", async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+    if (!product) {
+      return res.status(404).json({ message: "Product not found" });
+    }
+    res.json(product);
+  } catch (err) {
+    res.status(400).json({ message: "Invalid product id" });
+  }
+});
+
 // Add one product
 router.post("/", async (req, res) => {
   try {

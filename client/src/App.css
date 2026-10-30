@@ -76,3 +76,31 @@
   color: white;
   border-color: #646cff;
 }
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.detail {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.detail img {
+  width: 420px;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.detail-info {
+  flex: 1;
+  min-width: 260px;
+}
+
+.detail-btn {
+  padding: 10px 24px;
+  cursor: pointer;
+  font-size: 16px;
+}
