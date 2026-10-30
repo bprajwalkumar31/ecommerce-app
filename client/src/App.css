@@ -47,10 +47,32 @@
   text-align: center;
   margin-top: 40px;
 }
+
 .search {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
   font-size: 16px;
   box-sizing: border-box;
+}
+
+.categories {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.cat {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.cat.active {
+  background: #646cff;
+  color: white;
+  border-color: #646cff;
 }

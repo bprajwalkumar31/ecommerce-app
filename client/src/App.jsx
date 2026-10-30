@@ -7,6 +7,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("All");
 
   useEffect(() => {
     axios
@@ -24,8 +25,12 @@ function App() {
   if (loading) return <p className="message">Loading products...</p>;
   if (error) return <p className="message">{error}</p>;
 
-  const filtered = products.filter((p) =>
-    p.name.toLowerCase().includes(search.toLowerCase())
+  const categories = ["All", ...new Set(products.map((p) => p.category))];
+
+  const filtered = products.filter(
+    (p) =>
+      p.name.toLowerCase().includes(search.toLowerCase()) &&
+      (category === "All" || p.category === category)
   );
 
   return (
@@ -38,6 +43,17 @@ function App() {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
+      <div className="categories">
+        {categories.map((c) => (
+          <button
+            key={c}
+            className={c === category ? "cat active" : "cat"}
+            onClick={() => setCategory(c)}
+          >
+            {c}
+          </button>
+        ))}
+      </div>
       <div className="grid">
         {filtered.map((p) => (
           <div className="card" key={p._id}>
