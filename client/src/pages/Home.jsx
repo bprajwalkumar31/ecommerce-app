@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useCart } from "../context/CartContext";
 
 function Home() {
+  const { addToCart } = useCart();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -64,7 +66,7 @@ function Home() {
             <p className="category">{p.category}</p>
             <p className="desc">{p.description}</p>
             <p className="price">₹{p.price}</p>
-            <button>Add to Cart</button>
+            <button onClick={() => addToCart(p)}>Add to Cart</button>
           </div>
         ))}
       </div>

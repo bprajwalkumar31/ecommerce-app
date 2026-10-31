@@ -151,3 +151,32 @@
 .error {
   color: red;
 }
+.cart-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
+}
+
+.cart-row img {
+  width: 90px;
+  border-radius: 8px;
+}
+
+.cart-info {
+  flex: 1;
+  min-width: 140px;
+}
+
+.cart-qty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-sub {
+  font-weight: bold;
+  min-width: 70px;
+}

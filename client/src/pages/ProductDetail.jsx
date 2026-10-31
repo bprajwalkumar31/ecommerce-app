@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import { useCart } from "../context/CartContext";
 
 function ProductDetail() {
+  const { addToCart } = useCart();
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -35,7 +37,11 @@ function ProductDetail() {
           <p>{product.description}</p>
           <p className="price">₹{product.price}</p>
           <p>{product.stock > 0 ? product.stock + " in stock" : "Out of stock"}</p>
-          <button className="detail-btn" disabled={product.stock === 0}>
+          <button
+            className="detail-btn"
+            disabled={product.stock === 0}
+            onClick={() => addToCart(product)}
+          >
             Add to Cart
           </button>
         </div>
