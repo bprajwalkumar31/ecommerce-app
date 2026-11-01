@@ -180,3 +180,30 @@
   font-weight: bold;
   min-width: 70px;
 }
+.checkout {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.checkout-form {
+  flex: 1;
+  min-width: 280px;
+  margin: 0;
+}
+
+.summary {
+  flex: 1;
+  min-width: 260px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.order-box {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px 20px;
+  margin-bottom: 16px;
+}

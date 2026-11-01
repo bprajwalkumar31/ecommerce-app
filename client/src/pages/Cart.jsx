@@ -34,7 +34,12 @@ function Cart() {
         </div>
       ))}
       <h2>Total: ₹{total}</h2>
-      <Link to="/">← Continue shopping</Link>
+      <Link to="/checkout">
+        <button className="detail-btn">Proceed to Checkout</button>
+      </Link>
+      <p>
+        <Link to="/">← Continue shopping</Link>
+      </p>
     </div>
   );
 }

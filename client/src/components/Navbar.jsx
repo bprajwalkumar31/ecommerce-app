@@ -13,6 +13,7 @@ function Navbar() {
         <Link to="/cart">Cart ({count})</Link>
         {user ? (
           <>
+            <Link to="/orders">My Orders</Link>
             <span>Hi, {user.name}</span>
             <button onClick={logout}>Logout</button>
           </>
