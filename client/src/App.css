@@ -207,3 +207,7 @@
   padding: 12px 20px;
   margin-bottom: 16px;
 }
+.admin-form {
+  max-width: 480px;
+  margin: 20px 0;
+}
