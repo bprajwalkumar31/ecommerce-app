@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
+import { API_URL } from "../config";
 
-const API = "http://localhost:5000/api/products";
+const API = `${API_URL}/api/products`;
 
 function Admin() {
   const { user } = useAuth();

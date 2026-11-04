@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 import { useCart } from "../context/CartContext";
+import { API_URL } from "../config";
 
 function Checkout() {
   const { user } = useAuth();
@@ -56,7 +57,7 @@ function Checkout() {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:5000/api/orders",
+        `${API_URL}/api/orders`,
         {
           items: items.map((i) => ({ _id: i._id, qty: i.qty })),
           shippingAddress: form,

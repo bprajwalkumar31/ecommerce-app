@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useCart } from "../context/CartContext";
+import { API_URL } from "../config";
 
 function Home() {
   const { addToCart } = useCart();
@@ -13,7 +14,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/products")
+      .get(`${API_URL}/api/products`)
       .then((res) => {
         setProducts(res.data);
         setLoading(false);

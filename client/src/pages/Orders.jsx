@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
+import { API_URL } from "../config";
 
 function Orders() {
   const { user } = useAuth();
@@ -16,7 +17,7 @@ function Orders() {
     }
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:5000/api/orders/mine", {
+      .get(`${API_URL}/api/orders/mine`, {
         headers: { Authorization: "Bearer " + token },
       })
       .then((res) => {
